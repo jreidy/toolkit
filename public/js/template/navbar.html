@@ -1,0 +1,28 @@
+
+<div class="tab_top_background"></div>
+<div class="tab_top" id ="tab_top"></div>
+<%if (this.model.get("userName")) {%>
+<table id="user" class="user">
+	<tr>
+		<td>
+			<button class="top_item beacon_icon" id="beacon"></button>
+		</td>
+		<td>	
+	  		<button class="top_item project_icon" id="projects"></button>
+	  	</td>
+		<td>
+	 		<button class="top_item kpi_icon" id="kpis"></button>
+	 	</td>
+		<td>
+	 		<button class="top_item brown_bag_icon" id="brownbag"></button>
+	 	</td>
+<!-- 		<td>
+			<button id="settings" class="settings"></button>
+		</td> -->
+		<td>
+			<button id="logout" class="logout"></button>
+		</td>
+	</tr>
+</table>
+<%}%>
+

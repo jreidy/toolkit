@@ -1,0 +1,65 @@
+doctype 5
+html
+  head
+    meta(charset="utf-8")
+    title Engineer App
+    meta(name="viewport", 
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no")
+    meta(name="apple-mobile-web-app-capable",
+      content="yes")
+    meta(name="apple-mobile-web-app-status-bar-style",
+      content="none")
+
+    link(rel="stylesheet",
+      href="css/bootstrap.min.css")
+    link(rel="stylesheet",
+      href="css/bootstrap-responsive.min.css")
+    link(rel="stylesheet",
+      href="css/app.css")
+    
+    link(rel="apple-touch-icon-precomposed",
+      sizes="144x144",
+      href="img/apple-touch-icon-144-precomposed.png")
+    link(rel="apple-touch-icon-precomposed",
+      sizes="114x114",
+      href="img/apple-touch-icon-114-precomposed.png")
+    link(rel="apple-touch-icon-precomposed",
+      sizes="72x72",
+      href="img/apple-touch-icon-72-precomposed.png")
+    link(rel="apple-touch-icon-precomposed",
+      href="img/apple-touch-icon-57-precomposed.png")
+
+    link(rel="apple-touch-startup-image",
+      sizes="320x460",
+      href="img/startup-320x460.png")
+    link(rel="apple-touch-startup-image",
+      sizes="640x920",
+      href="img/startup-640x920.png")
+
+    //- script(src="http://engapp-weinre.jit.su/target/target-script-min.js#anonymous")
+    script(src="js/libs/require/require.js",
+      data-main="js/app")
+
+    script(
+      var xStart, yStart = 0;
+ 
+      document.addEventListener('touchstart',function(e) {
+        xStart = e.touches[0].screenX;
+        yStart = e.touches[0].screenY;
+      });
+ 
+      document.addEventListener('touchmove',function(e) {
+        var xMovement = Math.abs(e.touches[0].screenX - xStart);
+        var yMovement = Math.abs(e.touches[0].screenY - yStart);
+        if((yMovement * 3) > xMovement) {
+          e.preventDefault();
+        }
+      });
+    )
+
+ 
+  body
+    .loading_container
+    .wrapper
+      nav#navbar.navbar
+      #main.main

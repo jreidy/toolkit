@@ -1,0 +1,16 @@
+<div id="location" class="location">
+  <span><%= model.message %></span>
+</div>
+<blockquote class="travel_status">
+  <% if(location.status == null || location.status == "") {%>
+    <p class="current_travel_status not_set_status">
+      Set your travel message...
+    </p>
+  <% } else { %>
+    <p class="current_travel_status">
+      <%= location.status %>
+    </p>  
+  <% } %>
+  <a id="edit_travel_status" class="edit_travel_status" href="#beacon/status"> 
+  </a>
+</blockquote>

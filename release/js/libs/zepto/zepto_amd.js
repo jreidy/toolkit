@@ -1,0 +1,1 @@
+define(["libs/zepto/zepto","libs/zepto/deferred"],function(){return this.Deferred.installInto(this.Zepto),this.Zepto})

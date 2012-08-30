@@ -1,0 +1,62 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>Engineer App</title><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="stylesheet" href="css/bootstrap.min.css"><link rel="stylesheet" href="css/bootstrap-responsive.min.css"><link rel="stylesheet" href="css/app.css"><link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/apple-touch-icon-144-precomposed.png"><link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/apple-touch-icon-114-precomposed.png"><link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/apple-touch-icon-72-precomposed.png"><link rel="apple-touch-icon-precomposed" href="img/apple-touch-icon-57-precomposed.png"><link rel="apple-touch-startup-image" sizes="320x460" href="img/startup-320x460.png"><link rel="apple-touch-startup-image" sizes="640x920" href="img/startup-640x920.png"><script src="js/libs/require/require.js" data-main="js/app"></script>
+
+<script type="text/javascript" src="js/libs/raphael/raphael.js "></script> 
+
+<script src="js/libs/raphael/raphael.js"></script>
+
+<script src="js/libs/spinner/spinner.js"></script>
+
+<script>
+
+	document.addEventListener('touchmove',function(e) {
+        e.preventDefault();
+	});
+
+    this.imagePaths = new Array("../img/tabTestLight@2x.png", 
+      "../img/tabTestSelected@2x.png", 
+      "../img/tabTest@2x.png", 
+      "../img/tabTopLight.png", 
+      "../img/tabTopFirst.png", 
+      "../img/tabTopDark.png",
+      "../img/xSmall.png",
+      "../img/dashedLine.png",
+      "../img/beaconIcon.png",
+      "../img/kpiIcon.png",
+      "../img/brownBagIcon.png",
+      "../img/projectIcon.png");
+    this.images = new Array();
+    for (i = 0; i < imagePaths.length; i = i + 1) {
+        console.log(i + ": " + this.imagePaths[i]);
+        var image = new Image();
+        image.src = this.imagePaths[i];
+        this.images[i] = image;
+        console.log(this.images[i])
+    }
+
+</script>
+
+<style>
+    
+    .tab_top_first {
+      background: url("../img/tabTopFirst.png") no-repeat;
+      width: 104px;
+      height: 35px;
+      margin-top: 17px;
+      background-size: 104px 35px;
+      position: absolute;
+      z-index: 2;
+    }
+
+</style>
+
+</head>
+    <body id="body">
+        <div class="loading_container"></div>
+        <div class="wrapper">
+            <div id="navbar" class="navbar"></div>
+            <div id="main" class="main"></div>
+        </div>
+        
+    </body>
+</html>
+

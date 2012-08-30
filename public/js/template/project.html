@@ -1,0 +1,69 @@
+
+<h3 class="KPI_head"><%=title%></h3>
+
+<div id="scrollable" class="calendar_box">
+  <% var id = 0 %>
+  <% _.each(items, function(item) { %>
+  <div id="category<%=id%>">
+    <span class="kpiName"><%= item.name %></span>
+
+    <% for (weekIndex = 0; weekIndex < 8; weekIndex = weekIndex + 1) { %>
+      <table class="week_table" id="<%=id%>week<%=weekIndex%>">
+        <% _.each(item.subcategory, function(sub) { %>
+          <% var currentWeek = 0%>
+          <% sub.workingWeeks.every(function(workingWeek) { %>
+              <% th = this %>
+              <% if (weekIndex != currentWeek) { %>
+                  <% currentWeek = currentWeek + 1 %>
+              <%  th.continue; %>
+              <% } else { %>
+                  <% currentWeek = currentWeek + 1 %>
+              <% } %>
+              <tr>
+                <td>
+                  <div class="week_box"> 
+                    <table>
+                      <tr>
+                        <% for (i = 0; i < 7; i = i + 1) {%>
+                          <td>
+                            <% if (workingWeek[i]) {%>
+                                <div class="day_box"></div>
+                            <%} else {%>
+                                <div class="not_day_box"></div>
+                            <%}%>
+                            
+                          </td>
+                        <%}%>
+                      </tr>
+                    </table>
+                  </div>
+                </td>
+              <tr>
+
+          <%})%>
+        <%})%>
+      </table>
+    <% } %>
+
+  </div>
+    <% id = id + 1 %>
+  <%})%>
+</div>
+
+<div class="project_button_box">
+  <table class="project_table">
+    <tr>
+    <% for (i = 0; i < id; i = i + 1) { %>
+      <td>
+        <button class="category<%=i%> project_button" value = "<%=i%>"></button>
+      </td>
+    <%}%>
+      <td>
+        <button class="previous_week"></button>
+      </td>
+      <td>
+        <button class="next_week"></button>
+      </td>
+    </tr>
+  </table>
+</div>

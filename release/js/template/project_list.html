@@ -1,0 +1,12 @@
+<div class="tab_bar" id="tab_bar"></div>
+<header>
+  <h1 class="project_list_header">Project</h1>
+</header>
+<ul id="project_list" class="project_list">
+  <% _.each(items, function(item){ %>  
+    <li data-id="<%= item.gd$resourceId.$t %>">
+      <a class="project_name" href="#projects/<%= item.gd$resourceId.$t %>"><%= item.title.$t %></a>
+      <time class="last_update" datetime="<%= item.updatedDate %>"><%= item.updatedDate %></time>
+    </li>
+  <% }) %>
+</ul>

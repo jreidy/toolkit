@@ -1,0 +1,29 @@
+<p>
+  Please set your home office. When you travel to another office, your location will be highlighted to other peers.
+</p>
+<fieldset class="form-vertical offices">
+  <div class="control-group">
+    <div class="controls docs-input-sizes">
+      <select id="office">
+        <% if(!home) { %>
+          <option>None</option>
+        <% } %>
+        <%= home == "2nd St., SF, US" ? "<option selected=selected>" : "<option>" %>
+          2nd St., SF, US
+        </option>
+        <%= home == "CB, SF, US" ? "<option selected=selected>" : "<option>" %>
+          CB, SF, US
+        </option>
+        <%= home == "Tokyo, JP" ? "<option selected=selected>" : "<option>" %>
+          Tokyo, JP
+        </option>
+        <%= home == "Beijing, CN" ? "<option selected=selected>" : "<option>" %>
+          Beijing, CN
+        </option>
+        <%= home == "Buenos Aires, ARG" ? "<option selected=selected>" : "<option>" %>
+          Buenos Aires, ARG 
+        </option>
+      </select>
+    </div>
+  </div>
+</fieldset>

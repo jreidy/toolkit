@@ -1,0 +1,38 @@
+<ul class="floating">
+  <!-- <li><a id="setHome" class="setHome" href="#settings/home">Set Home Office</a></li> -->
+</ul>
+
+
+<script type="text/paperscript" canvas="tabs" resize>
+
+	document.getElementByIDonload = function() {
+		var topLeft = new Point(10, 20);
+		var rectSize = new Size(200, 100);
+		var path = new Path.Rectangle(topLeft, rectSize);
+		path.strokeColor = 'red';
+		path.fillColor = 'black';
+	 	var myCircle = new Path.Circle(new Point(500, 500), 50);
+	 	myCircle.fillColor = 'black';
+
+		path.onMouseEnter = function () { 
+	                this.fillColor = 'red'; 
+	            } 
+	    path.onMouseLeave = function () { 
+	        this.fillColor = 'black'; 
+	    } 
+	}
+
+
+</script>
+
+
+
+
+<!-- <canvas class="canvas_container" id="tabs" resize></canvas> -->
+
+<div class="tab_bar" id="tab_bar">
+
+</div>
+
+
+

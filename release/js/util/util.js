@@ -1,0 +1,1 @@
+(function(){define([],function(){var e;return e={loc:window.location,debug:function(){if(window.console)return window.console.log(Array.prototype.slice.call(arguments))},observing:function(t){return t.on("all",function(n){return e.debug(t,n)})}},e})}).call(this)

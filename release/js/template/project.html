@@ -1,0 +1,68 @@
+
+<p id="window_width"></p>
+<div id="scrollable" class="scroll_view">
+  <table>
+
+
+    <thead class="unmoving">
+      <tr id="top">
+          <% _.each(weeks, function(week) { %>
+            <th>......<%= week.name %>......</th>
+          <% }) %>
+        </tr>
+    </thead>
+  <% var id = 0 %>
+  <% _.each(items, function(item) { %>
+    <tbody id="category<%=id%>">
+      
+        <tr>
+          <td>
+            <div><h2><%= item.name %></h2></div>
+          </td>
+        </tr>
+
+        <% _.each(item.subcategory, function(sub) { %>
+          <tr>
+            <td><%= sub.name %></td>
+            <% _.each(sub.workingWeeks, function(workingWeek) { %>
+              <td >
+                
+                <div class="week_box"> 
+                  <table>
+                    <tr>
+                      <% for (i = 0; i < 7; i = i + 1) {%>
+                        <td>
+                          <% if (workingWeek[i]) {%>
+                              <div class="day_box"></div>
+                          <%} else {%>
+                              <div class="not_day_box"></div>
+                          <%}%>
+                          
+                        </td>
+                      <%}%>
+                    </tr>
+                  </table>
+                </div>
+
+              </td>
+            <% }) %>  
+          </tr>
+        <% }) %>
+
+      
+    </tbody>
+    <% id = id + 1 %>
+  <% }) %>
+
+  </table>
+</div>
+
+<table>
+  <tr>
+    <% for (i = 0; i < id; i = i + 1) { %>
+    <td>
+      <button class="category<%=i%>" value = "<%=i%>"><%=i + 1%></button>
+    </td>
+    <%}%>
+  </tr>
+</table>

@@ -1,0 +1,38 @@
+<div class="dashedTopLine" id="topDash"></div>
+<div class="tab_bar" id="tab_bar"></div>
+<br/>
+<p>
+	What are you interested in?
+</p>
+<fieldset class="form-vertical interests">
+  <div class="control-group">
+    <div class="controls docs-input-sizes">
+      <select id="interest">
+	      <% if(!interest) { %>
+          <option>None</option>
+        <% } %>
+        <%= interest == "1" ? "<option selected=selected>" : "<option>" %>
+          1
+        </option>
+        <%= interest == "2" ? "<option selected=selected>" : "<option>" %>
+          2
+        </option>
+        <%= interest == "3" ? "<option selected=selected>" : "<option>" %>
+          3
+        </option>
+      </select>
+    </div>
+  </div>
+</fieldset>
+
+<p id = "changed">
+	No change
+</p>
+
+<div>
+  <div id="locations" class="locations"></div>  
+</div>
+
+<div id="button"></div>
+<div id="matches"></div>
+<a href="#kpis" title="Kpi">KPI Dashboard</a>
